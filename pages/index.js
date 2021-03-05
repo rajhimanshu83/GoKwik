@@ -1,65 +1,57 @@
+import { useContext } from "react";
+
+import PhoneForm from "../components/phoneform";
+import Redeemed from "../components/redeemed";
+import styles from "../styles/Home.module.css";
+import AppContext from "../context/AppContext";
+
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const appContext = useContext(AppContext);
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
+    <div className="main">
+       <Head>
+        <title>GoKwik</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div>
+        <div className="mt-10 w-full z-100">
+          <img
+            style={{ width: "15rem", margin: "0 auto" }}
+            src="/man-matters.png"
+            alt="Man Matters"
+          />
         </div>
-      </main>
+        <div className="z-100 w-full text-center  mt-10">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-yellow-500 text-3xl font-black">
+            Congratulations{" "}
+          </span>
+          <span className="text-3xl font-black">🥳</span>
+        </div>
+      </div>
 
+      <div className="formcontainer w-3/4 mx-auto flex flex-col lg:flex-row mt-10">
+        <div className="w-full items-center">
+          <div className="rounded-full ">
+          {appContext.redeemed ? <Redeemed/> : <PhoneForm/>}
+          </div>
+        </div>
+      </div>
+      <div
+        style={{ top: 0, zIndex: "-1" }}
+        className="h-80 bg-gradient-to-r from-black via-gray-900 to-black h-112 text-center absolute w-full"
+      ></div>
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
-  )
+  );
 }
