@@ -20,6 +20,8 @@ function PhoneForm() {
   const onSubmit = () => {
     window.localStorage.setItem("manMattersNo", value);
     appContext.setRedeemed(true);
+    appContext.setSuccess(true);
+    setTimeout(()=> appContext.setSuccess(false) , 2000);
   }
 
   const checkPhone = (val) => {

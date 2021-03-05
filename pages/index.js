@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import PhoneForm from "../components/phoneform";
 import Redeemed from "../components/redeemed";
+import Popper from "../components/popper";
 import styles from "../styles/Home.module.css";
 import AppContext from "../context/AppContext";
 
@@ -42,6 +43,7 @@ export default function Home() {
         style={{ top: 0, zIndex: "-1" }}
         className="h-80 bg-gradient-to-r from-black via-gray-900 to-black h-112 text-center absolute w-full"
       ></div>
+      {appContext.success && <Popper/>}
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

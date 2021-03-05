@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
+import "../styles/popper.scss";
 // import AppContext from "../context/AppContext";
 
 // function MyApp({ Component, pageProps }) {
@@ -25,6 +26,7 @@ class MyApp extends App {
 
   state = {
     redeemed: false,
+    success: false,
   };
 
   componentDidMount() {
@@ -38,6 +40,10 @@ class MyApp extends App {
     this.setState({ redeemed: val });
   };
 
+  setSuccess = (val) => {
+    this.setState({ success: val });
+  };
+
   render() {
     const { Component, pageProps } = this.props;
 
@@ -46,6 +52,8 @@ class MyApp extends App {
         value={{
           redeemed: this.state.redeemed,
           setRedeemed: this.setRedeemed,
+          setSuccess: this.setSuccess,
+          success: this.state.success
         }}
       >
         <Component {...pageProps} />
