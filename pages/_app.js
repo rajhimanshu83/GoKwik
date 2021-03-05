@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
-import "../styles/popper.scss";
+import "../styles/Popper.scss";
 // import AppContext from "../context/AppContext";
 
 // function MyApp({ Component, pageProps }) {
