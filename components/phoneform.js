@@ -34,7 +34,7 @@ function PhoneForm() {
   return (
     <div className="verify-page ">
       <div className="verify-box">
-      <div className="illustration-wrapper rounded-3xl">
+         <div className="illustration-wrapper rounded-3xl shadow-lg">
             <img className="rounded-3xl" style={{width:1080}} src="/paytmcard.png" alt="paytmcard"/>
           </div>
         <div className="w-full p-5 text-center">
